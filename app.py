@@ -8,8 +8,8 @@ import os
 # Download model if not present
 if not os.path.exists("vlstm_92.h5"):
     import gdown
-    file_id = "1pXOBqK6zSgnXHweIEt-xt747Vgr5Pfmw"
-    gdown.download(f"https://drive.google.com/uc?id={file_id}", "vlstm_92.h5", quiet=False)
+    url = "https://drive.google.com/uc?id=1pXOBqK6zSgnXHweIEt-xt747Vgr5Pfmw"
+    gdown.download(url, "vlstm_92.h5", fuzzy=True, use_cookies=True)
 
 from keras.models import load_model
 
