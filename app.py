@@ -3,15 +3,15 @@ import streamlit as st
 import cv2
 import numpy as np
 import tempfile
-from keras.models import load_model
 import os
-import os
-import os
+
+# Download model if not present
 if not os.path.exists("vlstm_92.h5"):
     import gdown
     file_id = "1pXOBqK6zSgnXHweIEt-xt747Vgr5Pfmw"
     gdown.download(f"https://drive.google.com/uc?id={file_id}", "vlstm_92.h5", quiet=False)
 
+from keras.models import load_model
 
 st.title("Violence Detection in Video")
 st.write("Upload a video and the app will detect violence and generate timestamps.")
